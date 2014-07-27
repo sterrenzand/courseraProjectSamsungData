@@ -24,6 +24,9 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 
 - unzip the file getdata_projectfiles_UCI HAR Dataset.zip into your working directory ('run_analysis.R' uses relative file paths)
 
+-For more information on the data, the variables and the steps performed by 'run_analysis.R' please refer to 'CodeBook.md'
+
+
 
 General description of the raw data and it's source:
 =====================================================
