@@ -36,7 +36,8 @@ The tidy data set "summarizedReducedDT" as returned by the script "run_analysis.
 
 'summarizedReducedDT': 
 
-- a data frame with 180 observations of 68 variables (dimensions: 180 rows, 68 columns)
+tidy data set comprising 180 observations of 66 feature variables, the values of which are the averages for each activity and each subject on the mean and standard devivations of feature measurements, plus there are 2 additional columns: for the subject ID and the activity name
+Hence: a data frame with 180 observations of 68 variables (dimensions: 180 rows, 68 columns)
 
 - Each row identifies the subject who performed the activity, gives the name of the activity and the value of 66 feature variables. As required in Hadley Wickham's Tidy Data paper( http://vita.had.co.nz/papers/tidy-data.pdf), every row contains a unique observation.
 
@@ -49,42 +50,39 @@ The tidy data set "summarizedReducedDT" as returned by the script "run_analysis.
 
 - the other 66 columns have the names
 
- [1] "tBodyAcc-mean()-X"       "tBodyAcc-mean()-Y"       "tBodyAcc-mean()-Z"       "tBodyAcc-std()-X"       
- [5] "tBodyAcc-std()-Y"        "tBodyAcc-std()-Z"        "tGravityAcc-mean()-X"    "tGravityAcc-mean()-Y"   
- [9] "tGravityAcc-mean()-Z"    "tGravityAcc-std()-X"     "tGravityAcc-std()-Y"     "tGravityAcc-std()-Z"    
-[13] "tBodyAccJerk-mean()-X"   "tBodyAccJerk-mean()-Y"   "tBodyAccJerk-mean()-Z"   "tBodyAccJerk-std()-X"   
-[17] "tBodyAccJerk-std()-Y"    "tBodyAccJerk-std()-Z"    "tBodyGyro-mean()-X"      "tBodyGyro-mean()-Y"     
-[21] "tBodyGyro-mean()-Z"      "tBodyGyro-std()-X"       "tBodyGyro-std()-Y"       "tBodyGyro-std()-Z"      
-[25] "tBodyGyroJerk-mean()-X"  "tBodyGyroJerk-mean()-Y"  "tBodyGyroJerk-mean()-Z"  "tBodyGyroJerk-std()-X"  
-[29] "tBodyGyroJerk-std()-Y"   "tBodyGyroJerk-std()-Z"   "tBodyAccMag-mean()"      "tBodyAccMag-std()"      
-[33] "tGravityAccMag-mean()"   "tGravityAccMag-std()"    "tBodyAccJerkMag-mean()"  "tBodyAccJerkMag-std()"  
-[37] "tBodyGyroMag-mean()"     "tBodyGyroMag-std()"      "tBodyGyroJerkMag-mean()" "tBodyGyroJerkMag-std()" 
-[41] "fBodyAcc-mean()-X"       "fBodyAcc-mean()-Y"       "fBodyAcc-mean()-Z"       "fBodyAcc-std()-X"       
-[45] "fBodyAcc-std()-Y"        "fBodyAcc-std()-Z"        "fBodyAccJerk-mean()-X"   "fBodyAccJerk-mean()-Y"  
-[49] "fBodyAccJerk-mean()-Z"   "fBodyAccJerk-std()-X"    "fBodyAccJerk-std()-Y"    "fBodyAccJerk-std()-Z"   
-[53] "fBodyGyro-mean()-X"      "fBodyGyro-mean()-Y"      "fBodyGyro-mean()-Z"      "fBodyGyro-std()-X"      
-[57] "fBodyGyro-std()-Y"       "fBodyGyro-std()-Z"       "fBodyAccMag-mean()"      "fBodyAccMag-std()"      
-[61] "fBodyAccJerkMag-mean()"  "fBodyAccJerkMag-std()"   "fBodyGyroMag-mean()"     "fBodyGyroMag-std()"     
-[65] "fBodyGyroJerkMag-mean()" "fBodyGyroJerkMag-std()" 
-
-
-
-
-
+ [1] "subjectID"             "activityName"          "tBodyAccmean_X"        "tBodyAccmean_Y"        "tBodyAccmean_Z"       
+ [6] "tBodyAccstd_X"         "tBodyAccstd_Y"         "tBodyAccstd_Z"         "tGravityAccmean_X"     "tGravityAccmean_Y"    
+[11] "tGravityAccmean_Z"     "tGravityAccstd_X"      "tGravityAccstd_Y"      "tGravityAccstd_Z"      "tBodyAccJerkmean_X"   
+[16] "tBodyAccJerkmean_Y"    "tBodyAccJerkmean_Z"    "tBodyAccJerkstd_X"     "tBodyAccJerkstd_Y"     "tBodyAccJerkstd_Z"    
+[21] "tBodyGyromean_X"       "tBodyGyromean_Y"       "tBodyGyromean_Z"       "tBodyGyrostd_X"        "tBodyGyrostd_Y"       
+[26] "tBodyGyrostd_Z"        "tBodyGyroJerkmean_X"   "tBodyGyroJerkmean_Y"   "tBodyGyroJerkmean_Z"   "tBodyGyroJerkstd_X"   
+[31] "tBodyGyroJerkstd_Y"    "tBodyGyroJerkstd_Z"    "tBodyAccMagmean_"      "tBodyAccMagstd_"       "tGravityAccMagmean_"  
+[36] "tGravityAccMagstd_"    "tBodyAccJerkMagmean_"  "tBodyAccJerkMagstd_"   "tBodyGyroMagmean_"     "tBodyGyroMagstd_"     
+[41] "tBodyGyroJerkMagmean_" "tBodyGyroJerkMagstd_"  "fBodyAccmean_X"        "fBodyAccmean_Y"        "fBodyAccmean_Z"       
+[46] "fBodyAccstd_X"         "fBodyAccstd_Y"         "fBodyAccstd_Z"         "fBodyAccJerkmean_X"    "fBodyAccJerkmean_Y"   
+[51] "fBodyAccJerkmean_Z"    "fBodyAccJerkstd_X"     "fBodyAccJerkstd_Y"     "fBodyAccJerkstd_Z"     "fBodyGyromean_X"      
+[56] "fBodyGyromean_Y"       "fBodyGyromean_Z"       "fBodyGyrostd_X"        "fBodyGyrostd_Y"        "fBodyGyrostd_Z"       
+[61] "fBodyAccMagmean_"      "fBodyAccMagstd_"       "fBodyAccJerkMagmean_"  "fBodyAccJerkMagstd_"   "fBodyGyroMagmean_"    
+[66] "fBodyGyroMagstd_"      "fBodyGyroJerkMagmean_" "fBodyGyroJerkMagstd_" 
  
+ The values in these columns are of class: "numeric" and bounded within [-1,1]. 
 
-
-
-
-
-The dataset includes the following files:
-=========================================
-
-- 'README.md'
-
-- 'CodeBook.md': describes the variables, the data, and any transformations or work that was performed to clean up the                                                                                  data 
-
-- 'run_analysis.R': R script that cleans the raw data and outputs the cleaned tidy data sets "reducedDataSet.txt and "summarizedReducedDT.txt"
+ The variables in the columns are derived from feature variables coming from the accelerometer and gyroscope 3-axial raw signals. More information on this can be found in the descriptive files 'features_info.txt', 'README.txt' and 'features.txt' of the raw data. 
+ the names decode as follows:
+ prefix 't' : denotes time domain signal
+ prefix 'f' : denotes frequency domain signal
+ Acc : signal from accelerometer
+ Gyro: signal from gyrometer
+ Body: body part of acceleration signal
+ Gravity: gravity part of acceleration signal
+ mean: mean 
+ std: standard deviation
+ Jerk: jerk signal
+ Mag: Magnitude of the signal
+ X,Y,Z: denotes the axis the signal was mesured on
+ 
+With this information I consider the names descriptive and human readable enough to comply with the requirements for tidy data.
+ 
 
 - 'reducedDataSet.txt': tidy data set comprising 10299 observations of 66 variables on mean and standard devivations of sensor mearsurements. There are 3 additional columns: for the subject ID, activity label, and the activity name
 
@@ -92,71 +90,11 @@ The dataset includes the following files:
 
 
 
-
-
-
-
-
-The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. See 'features_info.txt' for more details. 
-
-For each record it is provided:
-======================================
-
-- Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
-- Triaxial Angular velocity from the gyroscope. 
-- A 561-feature vector with time and frequency domain variables. 
-- Its activity label. 
-- An identifier of the subject who carried out the experiment.
-
-The dataset includes the following files:
-=========================================
-
-- 'README.md'
-
-- 'features_info.txt': Shows information about the variables used on the feature vector.
-
-- 'features.txt': List of all features.
-
-- 'activity_labels.txt': Links the class labels with their activity name.
-
-- 'train/X_train.txt': Training set.
-
-- 'train/y_train.txt': Training labels.
-
-- 'test/X_test.txt': Test set.
-
-- 'test/y_test.txt': Test labels.
-
-The following files are available for the train and test data. Their descriptions are equivalent. 
-
-- 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
-
-- 'train/Inertial Signals/total_acc_x_train.txt': The acceleration signal from the smartphone accelerometer X axis in standard gravity units 'g'. Every row shows a 128 element vector. The same description applies for the 'total_acc_x_train.txt' and 'total_acc_z_train.txt' files for the Y and Z axis. 
-
-- 'train/Inertial Signals/body_acc_x_train.txt': The body acceleration signal obtained by subtracting the gravity from the total acceleration. 
-
-- 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second. 
-
-Notes: 
-======
-- Features are normalized and bounded within [-1,1].
-- Each feature vector is a row on the text file.
-
-For more information about this dataset contact: activityrecognition@smartlab.ws
-
-License:
-========
-Use of this dataset in publications must be acknowledged by referencing the following publication [1] 
-
-[1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
-
-
-
 Description of what the script 'run_analysis.R'does:
 ======================================================
-- Loads the raw data into the workspace
+- Loads the raw data into the workspace as dataframes 'testData' and 'trainData'
 
-- Training and the test sets are merged to create one data set.
+- Training and the test sets are merged to create one data set 'mergedData'
 
 - Columns containing the SubjectID and a lablel for the activity performed are added to the dataset
 
@@ -164,25 +102,11 @@ Description of what the script 'run_analysis.R'does:
 
 - The activity labels in the "activityLabels column are matched to Descriptive activity names (the ones contained in the original file "activity_labels.txt") are matched to the activityLabels and a column is added to "reducedDataSet"
 
-- Descriptive variable names (taken from the original file "features.txt") are introduced to name the feature variable columns of 'reducedDataSet'
+- Descriptive variable names (derived from the original file "features.txt") are introduced to name the feature variable columns of 'reducedDataSet'. The names are modified to eliminate "()" and "-" as they can cause problems when handling the data frame
 
 - "reducedDataSet.txt" is saved to disc
 
 - A second, independent tidy data set named 'summarizedReducedDT' with the average of each variable for each activity and each subject is created  
 
 - "summarizedReducedDT.txt" is saved to disc
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring web pages (click the **Help** toolbar button for more details on using R Markdown).
-
-When you click the **Knit HTML** button a web page will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r}
-summary(cars)
-```
-
-You can also embed plots, for example:
-
-```{r fig.width=7, fig.height=6}
-plot(cars)
-```
 
