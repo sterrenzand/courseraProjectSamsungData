@@ -51,6 +51,12 @@ reducedDataSet<-subset(mergedData, select=c(chosenColumns,562,563) )
  # in addition to this there are the three columns "subjectID", "activityLabels" and "activityName"
 
         colnames(reducedDataSet)[1:66]<-as.character(featurenames$V2[chosenColumns])
+
+#there appears to have been an error in the orignal featurenames file and the for a couple of values the name includes a "body"
+#too much e.g fBodyBodyAccJerkMag-mean()" should read fBodyAccJerkMag-mean() instead. This is fixed here
+
+colnames(reducedDataSet)[61:66]<-c("fBodyAccJerkMag-mean()","fBodyAccJerkMag-std()","fBodyGyroMag-mean()","fBodyGyroMag-std()",     
+                 "fBodyGyroJerkMag-mean()", "fBodyGyroJerkMag-std()")
 #saves the reducedDataSet to file "reducedDataSet.txt"
 write.table(reducedDataSet,file="reducedDataSet.txt",row.names=FALSE)
  

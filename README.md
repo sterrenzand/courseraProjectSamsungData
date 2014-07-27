@@ -65,4 +65,4 @@ Description of what the script 'run_analysis.R'does:
 
 - A second, independent tidy data set named 'summarizedReducedDT' with the average of each variable for each activity and each subject is created  
 
-- "summarizedReducedDT.txt" is saved to disc
+- "summarizedReducedDT.txt" is saved to disc: this is the tidy data set to be turned in for evaluation of the project
