@@ -37,7 +37,7 @@ The tidy data set "summarizedReducedDT" as returned by the script "run_analysis.
 'summarizedReducedDT': 
 
 tidy data set comprising 180 observations of 66 feature variables, the values of which are the averages for each activity and each subject on the mean and standard devivations of feature measurements, plus there are 2 additional columns: for the subject ID and the activity name
-Hence: a data frame with 180 observations of 68 variables (dimensions: 180 rows, 68 columns)
+Hence:'summarizedReducedDT'is a data frame with 180 observations of 68 variables (dimensions: 180 rows, 68 columns)
 
 - Each row identifies the subject who performed the activity, gives the name of the activity and the value of 66 feature variables. As required in Hadley Wickham's Tidy Data paper( http://vita.had.co.nz/papers/tidy-data.pdf), every row contains a unique observation.
 
@@ -92,21 +92,33 @@ With this information I consider the names descriptive and human readable enough
 
 Description of what the script 'run_analysis.R'does:
 ======================================================
-- Loads the raw data into the workspace as dataframes 'testData' and 'trainData'
+- Loads the raw data into the workspace as dataframes 'testData' (dimensions:2947 rows  561 colums) and 'trainData' (dimensions:7352 rows  561 columns). The data frame contains values  of class: numeric
 
-- Training and the test sets are merged to create one data set 'mergedData'
+- Training and the test sets are merged using rbind() to create one data set 'mergedData' (dimensions: 10299 rows  563 columns)
+The data frame contains values  of class: numeric
 
-- Columns containing the SubjectID and a lablel for the activity performed are added to the dataset
+- Columns containing the SubjectID and a label for the activity performed are added to the dataset. First the subjectID data for the test and training set is read in then the two are combined to a single vector and added to the dataframe as mergedDataSet$subjectID. The same method is used to add the column mergedDataSet$activityLabels
 
-- The dataset is reduced to create "reducedDataSet": All feature variables except the columns for variables pertaining to a mean and standard deviation for each measurementare eliminated, the columns for "subjectID"", "activityLabels"" and "activityName"" stay
+- The dataset is reduced to create "reducedDataSet": All feature variables except the columns for variables pertaining to a mean and standard deviation for each measurementare eliminated, the columns for "subjectID"", "activityLabels"" and "activityName"" stay.
+  First the names of the features are loaded from features.txt (raw data) and coerced from class: factor to class: character to create the vector 'names' (dim: 1:561 of class: character) 
+  with help of the function grep() the script looks for feature names including the word "mean()" or "std()" indicating a mean or standard deviation measure
+  Then it creates a 'reducedDataSet' which is a subset of 'mergedData' comprisng only the columns containing mean or 
+ standard deviation measurements and the subjectID and activityLabels columns
 
-- The activity labels in the "activityLabels column are matched to Descriptive activity names (the ones contained in the original file "activity_labels.txt") are matched to the activityLabels and a column is added to "reducedDataSet"
+- The activity labels in the "activityLabels column are matched to Descriptive activity names (the ones contained in the original file "activity_labels.txt", which first need to be coerced to class: character) and a column is added to "reducedDataSet"
 
-- Descriptive variable names (derived from the original file "features.txt") are introduced to name the feature variable columns of 'reducedDataSet'. The names are modified to eliminate "()" and "-" as they can cause problems when handling the data frame
-
+- Descriptive variable names (derived from the original file "features.txt") are introduced to name the feature variable columns of 'reducedDataSet'. 
+        There appears to have been an error in the orignal featurenames file and the for a couple of values the name includes a "body" too much e.g fBodyBodyAccJerkMag-mean()" should read fBodyAccJerkMag-mean() instead. This is fixed by eliminating the second "body" where it is present in the name.
+        The names are further modified to eliminate "()" and "-" as they can cause problems when handling the data frame
+        
 - "reducedDataSet.txt" is saved to disc
 
-- A second, independent tidy data set named 'summarizedReducedDT' with the average of each variable for each activity and each subject is created  
+- A second, independent tidy data set named 'summarizedReducedDT' is derived from 'reducedDataSet'  with the average of each variable for each activity and each subject. 
+        For each subject the means of the feature variables are calculated for every given activity 
+        e.g.for subject 1 the means of the feature variables for the activity "walking" (the results are put in one row of                 the 'summarizedReducedDT' data set together with the subjectID and the activityName) 
+        the resulting dataframe a somewhat summarized more compact version of the data.
+        
+
 
 - "summarizedReducedDT.txt" is saved to disc
 
