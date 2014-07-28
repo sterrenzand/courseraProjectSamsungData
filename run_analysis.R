@@ -47,16 +47,21 @@ reducedDataSet<-subset(mergedData, select=c(chosenColumns,562,563) )
                 reducedDataSet$activityName[i]<-as.character(activityNames$V2[reducedDataSet$activityLabels[i]])
 
 ###Appropriately labels the data set with descriptive variable names.
- #as variable names for the columns of "reducedDataSet" the names for the features given in "features.txt" are used
+ #as variable names for the columns of "reducedDataSet" the names for the features given in "features.txt" are used as basis
  # in addition to this there are the three columns "subjectID", "activityLabels" and "activityName"
+ # the names in "features.txt" are a little problematic in that they contain "()" or "-" or shortcuts in the names 
+ # these need to be removed
+namevector<-as.character(featurenames$V2[chosenColumns])
+tidynamevector<-gsub("\\(\\)", "_", namevector)
+tidynamevector<-gsub("-", "",tidynamevector)
+        colnames(reducedDataSet)[1:66]<-tidynamevector
 
-        colnames(reducedDataSet)[1:66]<-as.character(featurenames$V2[chosenColumns])
 
 #there appears to have been an error in the orignal featurenames file and the for a couple of values the name includes a "body"
 #too much e.g fBodyBodyAccJerkMag-mean()" should read fBodyAccJerkMag-mean() instead. This is fixed here
 
-colnames(reducedDataSet)[61:66]<-c("fBodyAccJerkMag-mean()","fBodyAccJerkMag-std()","fBodyGyroMag-mean()","fBodyGyroMag-std()",     
-                 "fBodyGyroJerkMag-mean()", "fBodyGyroJerkMag-std()")
+colnames(reducedDataSet)[61:66]<-c("fBodyAccJerkMagmean_","fBodyAccJerkMagstd_","fBodyGyroMagmean_","fBodyGyroMagstd_",     
+                 "fBodyGyroJerkMagmean_", "fBodyGyroJerkMagstd_")
 #saves the reducedDataSet to file "reducedDataSet.txt"
 write.table(reducedDataSet,file="reducedDataSet.txt",row.names=FALSE)
  
