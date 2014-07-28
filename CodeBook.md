@@ -49,21 +49,22 @@ Hence:'summarizedReducedDT'is a data frame with 180 observations of 68 variables
 'activityName' can take the values: "LAYING", "SITTING" "STANDING", "WALKING", "WALKING_DOWNSTAIRS", "WALKING_UPSTAIRS".  As the names suggest the subject is observed in different states. That is laying down, sitting, walking on a horizontally, or walking down or up stairs.
 
 - the other 66 columns have the names
+        
 
- [1] "subjectID"             "activityName"          "tBodyAccmean_X"        "tBodyAccmean_Y"        "tBodyAccmean_Z"       
- [6] "tBodyAccstd_X"         "tBodyAccstd_Y"         "tBodyAccstd_Z"         "tGravityAccmean_X"     "tGravityAccmean_Y"    
-[11] "tGravityAccmean_Z"     "tGravityAccstd_X"      "tGravityAccstd_Y"      "tGravityAccstd_Z"      "tBodyAccJerkmean_X"   
-[16] "tBodyAccJerkmean_Y"    "tBodyAccJerkmean_Z"    "tBodyAccJerkstd_X"     "tBodyAccJerkstd_Y"     "tBodyAccJerkstd_Z"    
-[21] "tBodyGyromean_X"       "tBodyGyromean_Y"       "tBodyGyromean_Z"       "tBodyGyrostd_X"        "tBodyGyrostd_Y"       
-[26] "tBodyGyrostd_Z"        "tBodyGyroJerkmean_X"   "tBodyGyroJerkmean_Y"   "tBodyGyroJerkmean_Z"   "tBodyGyroJerkstd_X"   
-[31] "tBodyGyroJerkstd_Y"    "tBodyGyroJerkstd_Z"    "tBodyAccMagmean_"      "tBodyAccMagstd_"       "tGravityAccMagmean_"  
-[36] "tGravityAccMagstd_"    "tBodyAccJerkMagmean_"  "tBodyAccJerkMagstd_"   "tBodyGyroMagmean_"     "tBodyGyroMagstd_"     
-[41] "tBodyGyroJerkMagmean_" "tBodyGyroJerkMagstd_"  "fBodyAccmean_X"        "fBodyAccmean_Y"        "fBodyAccmean_Z"       
-[46] "fBodyAccstd_X"         "fBodyAccstd_Y"         "fBodyAccstd_Z"         "fBodyAccJerkmean_X"    "fBodyAccJerkmean_Y"   
-[51] "fBodyAccJerkmean_Z"    "fBodyAccJerkstd_X"     "fBodyAccJerkstd_Y"     "fBodyAccJerkstd_Z"     "fBodyGyromean_X"      
-[56] "fBodyGyromean_Y"       "fBodyGyromean_Z"       "fBodyGyrostd_X"        "fBodyGyrostd_Y"        "fBodyGyrostd_Z"       
-[61] "fBodyAccMagmean_"      "fBodyAccMagstd_"       "fBodyAccJerkMagmean_"  "fBodyAccJerkMagstd_"   "fBodyGyroMagmean_"    
-[66] "fBodyGyroMagstd_"      "fBodyGyroJerkMagmean_" "fBodyGyroJerkMagstd_" 
+        [1] "tBodyAccmean_X"        "tBodyAccmean_Y"        "tBodyAccmean_Z"        "tBodyAccstd_X"         "tBodyAccstd_Y"        
+        [6] "tBodyAccstd_Z"         "tGravityAccmean_X"     "tGravityAccmean_Y"     "tGravityAccmean_Z"     "tGravityAccstd_X"     
+        [11] "tGravityAccstd_Y"      "tGravityAccstd_Z"      "tBodyAccJerkmean_X"    "tBodyAccJerkmean_Y"    "tBodyAccJerkmean_Z        "   
+        [16] "tBodyAccJerkstd_X"     "tBodyAccJerkstd_Y"     "tBodyAccJerkstd_Z"     "tBodyGyromean_X"       "tBodyGyromean_Y"      
+        [21] "tBodyGyromean_Z"       "tBodyGyrostd_X"        "tBodyGyrostd_Y"        "tBodyGyrostd_Z"        "tBodyGyroJerkmean_        X"  
+        [26] "tBodyGyroJerkmean_Y"   "tBodyGyroJerkmean_Z"   "tBodyGyroJerkstd_X"    "tBodyGyroJerkstd_Y"    "tBodyGyroJerkstd_Z"   
+        [31] "tBodyAccMagmean_"      "tBodyAccMagstd_"       "tGravityAccMagmean_"   "tGravityAccMagstd_"    "tBodyAccJerkMagmean_" 
+        [36] "tBodyAccJerkMagstd_"   "tBodyGyroMagmean_"     "tBodyGyroMagstd_"      "tBodyGyroJerkMagmean_" "tBodyGyroJerkMagstd_" 
+        [41] "fBodyAccmean_X"        "fBodyAccmean_Y"        "fBodyAccmean_Z"        "fBodyAccstd_X"         "fBodyAccstd_Y"        
+        [46] "fBodyAccstd_Z"         "fBodyAccJerkmean_X"    "fBodyAccJerkmean_Y"    "fBodyAccJerkmean_Z"    "fBodyAccJerkstd_X"    
+        [51] "fBodyAccJerkstd_Y"     "fBodyAccJerkstd_Z"     "fBodyGyromean_X"       "fBodyGyromean_Y"       "fBodyGyromean_Z"      
+        [56] "fBodyGyrostd_X"        "fBodyGyrostd_Y"        "fBodyGyrostd_Z"        "fBodyAccMagmean_"      "fBodyAccMagstd_"      
+        [61] "fBodyAccJerkMagmean_"  "fBodyAccJerkMagstd_"   "fBodyGyroMagmean_"     "fBodyGyroMagstd_"      "fBodyGyroJerkMagmean_"
+        [66] "fBodyGyroJerkMagstd_" 
  
  The values in these columns are of class: "numeric" and bounded within [-1,1]. 
 
