@@ -68,18 +68,20 @@ Hence:'summarizedReducedDT'is a data frame with 180 observations of 68 variables
  The values in these columns are of class: "numeric" and bounded within [-1,1]. 
 
  The variables in the columns are derived from feature variables coming from the accelerometer and gyroscope 3-axial raw signals. More information on this can be found in the descriptive files 'features_info.txt', 'README.txt' and 'features.txt' of the raw data. 
+ 
  the names decode as follows:
- prefix 't' : denotes time domain signal
- prefix 'f' : denotes frequency domain signal
- Acc : signal from accelerometer
- Gyro: signal from gyrometer
- Body: body part of acceleration signal
- Gravity: gravity part of acceleration signal
- mean: mean 
- std: standard deviation
- Jerk: jerk signal
- Mag: Magnitude of the signal
- X,Y,Z: denotes the axis the signal was mesured on
+ 
+        prefix 't' : denotes time domain signal
+        prefix 'f' : denotes frequency domain signal
+        Acc : signal from accelerometer
+        Gyro: signal from gyrometer
+        Body: body part of acceleration signal
+        Gravity: gravity part of acceleration signal
+        mean: mean 
+        std: standard deviation
+        Jerk: jerk signal
+        Mag: Magnitude of the signal
+         X,Y,Z: denotes the axis the signal was mesured on
  
 With this information I consider the names descriptive and human readable enough to comply with the requirements for tidy data.
  
